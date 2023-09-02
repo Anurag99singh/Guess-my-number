@@ -24,9 +24,20 @@ let event=bt.addEventListener('click', function () {
     //    bt.removeEventListener('click');
     }
     else {
-        diff = Math.abs(x - rn);
+        if(score===0)
+        {
+            mess.innerHTML = `Let's Begin again!!! You have made too many attempts ✌️🤞`;
+            score = 20
+            box.value = '';
+            body.style.backgroundColor = '#222';
+            randomnumber();
+        }else
+        {
+         diff = Math.abs(x - rn);
         scorecheck(diff);
         scoredecrease();
+        }
+       
     }
 })
 
